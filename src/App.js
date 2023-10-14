@@ -31,14 +31,14 @@ export default function App() {
   const [tasks, setTasks] = useState([]);
   const [sortBy, setSortBy] = useState("All tasks");
 
-  function handleAddNewTask(task, priority) {
+  function handleAddNewTask(task) {
     setTasks((tasks) => [
       ...tasks,
       {
         id: Date.now(),
         taskName: task,
         done: false,
-        priority: priority,
+
         isEditing: false,
       },
     ]);
@@ -122,14 +122,13 @@ function Header() {
 
 function Form({ handleAddNewTask }) {
   const [taskName, setTaskName] = useState("");
-  const [priority, setPriority] = useState("Urgent");
 
   function handleSubmit(e) {
     e.preventDefault();
 
     if (!taskName) return;
 
-    handleAddNewTask(taskName, priority);
+    handleAddNewTask(taskName);
 
     setTaskName("");
   }
