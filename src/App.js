@@ -89,7 +89,7 @@ export default function App() {
   }
 
   return (
-    <div>
+    <div className="app">
       <Header />
 
       <Form handleAddNewTask={handleAddNewTask} />
@@ -313,7 +313,7 @@ function EditTodo({ editTask, task }) {
 
         <div className="edit-buttons list-buttons">
           <button type="submit">💾</button>
-          <button>❌</button>
+          <button>🔙</button>
         </div>
       </form>
     </div>
